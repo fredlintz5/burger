@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">    
+<meta name="description" content="Custom Burger Creator">
+<meta name="author" content="Fred Lintz">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Custom Burger App</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<div class="container">
+		<br>
+		<div class="row text-center">
+			<div class="col-xs-12"><h2>Create a Burger</h2></div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-xs-2 text-center">
+				<p>Ingredients</p>
+				<button class='btn btn-default btn-block'>Bun</button>
+				<button class='btn btn-default btn-block'>Beef</button>
+				<button class='btn btn-default btn-block'>Lettuce</button>
+				<button class='btn btn-default btn-block'>Tomato</button>
+				<button class='btn btn-default btn-block'>Onion</button>
+				<button class='btn btn-default btn-block'>Cheese</button>
+				<button class='btn btn-default btn-block'>Ketchup</button>
+				<button class='btn btn-default btn-block'>Mayo</button>
+				<button class='btn btn-default btn-block'>Mustard</button>
+				<button class='btn btn-default btn-block'>Mayo</button>
+			</div>
+			<div class="col-xs-8"></div>
+			<div class="col-xs-2 text-center">
+				<p>Existing Burgers</p>
+				{{{ body }}}
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-xs-12">
+				<ul class='nav nav-pills nav-justified' style='cursor:pointer'>
+					<li class='nav-item'><a>Clear Ingredients</a></li>
+					<li class='nav-item'><a>Create Burger</a></li>
+					<li class='nav-item'><a>Update Burger</a></li>
+					<li class='nav-item'><a>Delete Burger</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
