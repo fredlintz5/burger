@@ -29,7 +29,7 @@ let orm = {
 	updateBurger: function(column, newValue, id) {
 		connection.query(`UPDATE burgers SET ${column}=${newValue} WHERE id=${id}`, (err, result) => {
 			if (err) {
-				console.log(err)
+				console.log(err) 
 			} else {
 				console.log(result);
 			}
