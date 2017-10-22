@@ -1,11 +1,11 @@
 
 INSERT INTO burgers 
 
-(name, calories, bun, beef_patty, lettuce, tomato, onion, cheese, ketchup, mayo, mustard) 
+(name, bun, beef_patty, lettuce, tomato, onion, cheese) 
 
 VALUES 
 
-('Classic', 600, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-('Vegan', 300, 1, 0, 1, 1, 1, 0, 1, 0, 1),
-('Slim', 400, 1, 1, 1, 1, 0, 0, 1, 0, 0);
+('Classic', 1, 1, 1, 1, 1, 1),
+('Vegan', 1, 0, 1, 1, 1, 0),
+('Slim', 1, 1, 1, 1, 0, 0);
 
