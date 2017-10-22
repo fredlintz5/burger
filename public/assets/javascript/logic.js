@@ -1,5 +1,4 @@
 
-
 function addIngredientsToModal(object) {
 	$('#burgerName').text(object.name);
 
