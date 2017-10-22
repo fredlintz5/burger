@@ -9,6 +9,7 @@
 <title>Custom Burger App</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -16,44 +17,69 @@
 <body>
 
 	<div class="container">
-		<br>
+		{{!-- MODAL --}}
+		<div class="modal fade" id="ingredientsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h3 class="modal-title" id="burgerName">Classic</h3>
+		        <span>Serving Size (1)</span>
+		      </div>
+		      <div class="modal-body" id='ingredientsList'>
+		        <h4>Ingredients:</h4>
+		        <ul></ul>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
 		<div class="row text-center">
 			<div class="col-xs-12"><h2>Create a Burger</h2></div>
 		</div>
 		<br>
 		<div class="row">
 			<div class="col-xs-2 text-center">
-				<p>Ingredients</p>
-				<button class='btn btn-default btn-block' id='bun'>Bun</button>
-				<button class='btn btn-default btn-block' id='bee'>Beef</button>
-				<button class='btn btn-default btn-block' id='let'>Lettuce</button>
-				<button class='btn btn-default btn-block' id='tom'>Tomato</button>
-				<button class='btn btn-default btn-block' id='oni'>Onion</button>
-				<button class='btn btn-default btn-block' id='che'>Cheese</button>
-				<button class='btn btn-default btn-block' id='ket'>Ketchup</button>
-				<button class='btn btn-default btn-block' id='may'>Mayo</button>
-				<button class='btn btn-default btn-block' id='mus'>Mustard</button>
-				<button class='btn btn-default btn-block' id='may'>Mayo</button>
+				<div id='ingredients'>
+					<p>Ingredients</p>
+					<button class='btn btn-default btn-block' id='bunBut'>Bun</button>
+					<button class='btn btn-default btn-block' id='beeBut'>Beef</button>
+					<button class='btn btn-default btn-block' id='letBut'>Lettuce</button>
+					<button class='btn btn-default btn-block' id='tomBut'>Tomato</button>
+					<button class='btn btn-default btn-block' id='oniBut'>Onion</button>
+					<button class='btn btn-default btn-block' id='cheBut'>Cheese</button>
+				</div>
+				<br>
+				<div class="input-group">
+				  <input type="text" class="form-control" placeholder="Burger Name" id="name">
+				</div>
+				<br>
+				<button class='btn btn-success btn-block' id='createBut'>Create Burger</button>
 			</div>
-			<div class="col-xs-8 text-center">
-				<img src="assets/images/buns.png">
+			<div class="col-xs-8 text-center" id='images'>
+				<img class='' id='topBunImg' src="assets/images/topBun.png">
+				<img class='' id='letImg' src="assets/images/Lettuce.png">
+				<img class='' id='tomImg' src="assets/images/tomato.png">
+				<img class='' id='oniImg' src="assets/images/onion.png">
+				<img class='' id='cheImg' src="assets/images/cheese.png">
+				<img class='' id='beeImg' src="assets/images/beef.png">
+				<img class='' id='botBunImg' src="assets/images/botBun.png">
 			</div>
 			<div class="col-xs-2 text-center">
-				<p>Existing Burgers</p>
-				{{{ body }}}
-			</div>
-		</div>
-		<br>
-		<div class="row">
-			<div class="col-xs-12">
-				<ul class='nav nav-pills nav-justified' style='cursor:pointer'>
-					<li class='nav-item'><a>Clear Ingredients</a></li>
-					<li class='nav-item'><a>Create Burger</a></li>
-					<li class='nav-item'><a>Update Burger</a></li>
-					<li class='nav-item'><a>Delete Burger</a></li>
-				</ul>
+				<div id='sqlButtons'>
+					<p>Existing Burgers</p>
+					{{{ body }}}
+				</div>
+				<br>
+				<button class='btn btn-warning btn-block' id='upBut'>Update Burger</button>
+				<button class='btn btn-danger btn-block' id='delBut'>Delete Burger</button>
 			</div>
 		</div>
 	</div>
+	<script src='assets/javascript/logic.js'></script>
 </body>
 </html>

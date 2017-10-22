@@ -7,7 +7,7 @@ let orm = {
 	createNew: function(newBurger) {
 		let obj = newBurger;
 
-		connection.query(`INSERT INTO burgers (name, calories, bun, beef_patty, lettuce, tomato, onion, cheese, ketchup, mayo, mustard) VALUE ('${obj.name}', ${obj.cal}, ${obj.bun}, ${obj.pat}, ${obj.let}, ${obj.tom}, ${obj.oni}, ${obj.che}, ${obj.ket}, ${obj.may}, ${obj.mus})`, (err, result) => {
+		connection.query(`INSERT INTO burgers (name, bun, beef_patty, lettuce, tomato, onion, cheese) VALUE ('${obj.name}', ${obj.bun}, ${obj.beef_patty}, ${obj.lettuce}, ${obj.tomato}, ${obj.onion}, ${obj.cheese})`, (err, result) => {
 			if (err) {
 				console.log(err)
 			} else {
@@ -21,7 +21,7 @@ let orm = {
 			if (err) {
 				console.log(err)
 			} else {
-				console.log(result);
+				return result;
 			}
 		})
 	},
