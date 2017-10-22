@@ -1,6 +1,6 @@
 #images {
 	position: relative;
-	right: 30%;
+	right: 70%;
 }
 
 #topBunImg {
@@ -41,6 +41,31 @@
 	position: absolute;		
     top: 10px;
     z-index: -6;
+}
+
+
+@media screen and (min-width: 576px) {
+    #images {
+        right: 45%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #images {
+        right: 40%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #images {
+        right: 32%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #images {
+        right: 27%;
+    }
 }
 
 

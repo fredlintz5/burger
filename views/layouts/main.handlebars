@@ -17,8 +17,8 @@
 <body>
 
 	<div class="container">
-		{{!-- MODAL --}}
-		<div class="modal fade" id="ingredientsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		{{!-- Ingredients MODAL --}}
+		<div class="modal fade" id="ingredientsModal" tabindex="-1" role="dialog" aria-hidden="true">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header">
@@ -33,6 +33,59 @@
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          <span aria-hidden="true">&times;</span>
 		        </button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		{{!-- Delete MODAL --}}
+		<div class="modal fade text-center" id="deleteModal" tabindex="-1" role="dialog" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h3 class="modal-title" id="burgerName">Delete Burger (how could you?!)</h3>
+		      </div>
+		      <div class="modal-body" id='ingredientsList'>
+		        <div class="form-group">
+				  <input type="text" class="form-control" placeholder="Insert Exact Name of Burger to DELETE" id="deleteBurger">
+				</div>
+		      </div>
+		      <div class="modal-footer">
+		        <button class='btn btn-danger btn-block' id='delButConfirm'>Delete Burger</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		{{!-- Update MODAL --}}
+		<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h3 class="modal-title text-center" id="burgerName">Update Burger</h3>
+		      </div>
+		      <div class="modal-body" id='ingredientsList'>
+		        <div class="form-group">
+				  <input type="text" class="form-control" placeholder="Insert Exact Name of Burger to UPDATE" id="updateBurger">
+				</div>
+				<div class="form-group">
+					<label for="columnChoices">Select What you'd like to Update</label>
+					<select class='form-control' id='optionValue'>
+						<option value="name">Name</option>
+						<option value="bun">Bun</option>
+						<option value="beef_patty">Beef</option>
+						<option value="lettuce">Lettuce</option>
+						<option value="tomato">Tomato</option>
+						<option value="onion">Onion</option>
+						<option value="cheese">Cheese</option>
+					</select>
+				</div>
+				<div class="form-group">
+				  <input type="text" class="form-control" placeholder="Insert new value here..." id="newValue">
+				</div>
+		      </div>
+		      <div class="modal-footer">
+		        <button class='btn btn-warning btn-block' id='upButConfirm'>Delete Burger</button>
 		      </div>
 		    </div>
 		  </div>

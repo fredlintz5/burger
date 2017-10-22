@@ -111,18 +111,17 @@ $('#createBut').on('click', function() {
 
 
 $('#upBut').on('click', function() {
-	console.log("update");
+	$('#updateModal').modal('toggle');
 });
 
 
 $('#delBut').on('click', function() {
-	console.log("delete");
+	$('#deleteModal').modal('toggle');
 });
 
 
 $('#sqlButtons').on('click', 'button', function() {
 	let id = $(this).data('id');
-	console.log(id);
 
 	$.ajax({
 		url: '/burgers/' + id,
