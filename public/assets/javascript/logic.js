@@ -7,6 +7,8 @@ function addIngredientsToModal(object) {
 
 	if (object.bun === 1) {
 		li += 'Bun</li>';
+	} else {
+		li = "";
 	}
 	if (object.beef_patty === 1) {
 		li += '<li>Beef Patty</li>';
@@ -92,7 +94,6 @@ $('#createBut').on('click', function() {
 		if ($('#beeImg').attr('class') === 'hide') {
 			newBurger.beef_patty = 0;
 		}
-		console.log(newBurger);
 
 		$.ajax({
 			url: '/burgers/create',
@@ -100,7 +101,6 @@ $('#createBut').on('click', function() {
 			data: newBurger
 		})
 		.done(function(result) {
-			console.log(result);
 			location.reload();
 		})
 
