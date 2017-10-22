@@ -43,11 +43,11 @@
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header">
-		        <h3 class="modal-title" id="burgerName">Delete Burger (how could you?!)</h3>
+		        <h3 class="modal-title">Delete Burger (how could you?!)</h3>
 		      </div>
 		      <div class="modal-body" id='ingredientsList'>
 		        <div class="form-group">
-				  <input type="text" class="form-control" placeholder="Insert Exact Name of Burger to DELETE" id="deleteBurger">
+				  <input type="text" class="form-control" placeholder="Insert Exact Name of Burger to DELETE (case sensitive)" id="deleteBurger">
 				</div>
 		      </div>
 		      <div class="modal-footer">
@@ -62,7 +62,7 @@
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header">
-		        <h3 class="modal-title text-center" id="burgerName">Update Burger</h3>
+		        <h3 class="modal-title text-center">Update Burger</h3>
 		      </div>
 		      <div class="modal-body" id='ingredientsList'>
 		        <div class="form-group">
@@ -81,18 +81,19 @@
 					</select>
 				</div>
 				<div class="form-group">
-				  <input type="text" class="form-control" placeholder="Insert new value here..." id="newValue">
+					<label for="newValue">If you want to remove/add an ingredient, type true or false.</label>
+					<input type="text" class="form-control" placeholder="Insert new value here..." id="newValue">
 				</div>
 		      </div>
 		      <div class="modal-footer">
-		        <button class='btn btn-warning btn-block' id='upButConfirm'>Delete Burger</button>
+		        <button class='btn btn-warning btn-block' id='upButConfirm'>Update Burger</button>
 		      </div>
 		    </div>
 		  </div>
 		</div>
 
 		<div class="row text-center">
-			<div class="col-xs-12"><h2>Create a Burger</h2></div>
+			<div class="col-xs-12"><h2>Build a Burger</h2></div>
 		</div>
 		<br>
 		<div class="row">

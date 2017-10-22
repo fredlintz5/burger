@@ -38,6 +38,9 @@ function hideShow(id, id2) {
 
 
 $('#ingredients').on('click', 'button', function() {
+
+	$(this).toggleClass('deselect');
+	
 	switch ($(this).html()) {
 		case 'Bun':
 			hideShow('#topBunImg', '#botBunImg')
@@ -112,11 +115,39 @@ $('#createBut').on('click', function() {
 
 $('#upBut').on('click', function() {
 	$('#updateModal').modal('toggle');
+
+	$('#upButConfirm').on('click', function() {
+		let name = $('#updateBurger').val().trim();
+		let optionValue = $('#optionValue').val();
+		let newValue    = $('#newValue').val().trim();
+		if (name !== "" && newValue !== "") {
+			$.ajax({
+				url: `/burgers/update/${name}/${optionValue}/${newValue}/`,
+				type: 'PUT',
+			})
+			.done(function(result) {
+				location.reload();
+			})
+		}
+	})	
 });
 
 
 $('#delBut').on('click', function() {
 	$('#deleteModal').modal('toggle');
+
+	$('#delButConfirm').on('click', function() {
+		let name = $('#deleteBurger').val().trim();
+		if (name !== "") {
+			$.ajax({
+				url: '/burgers/delete/' + name,
+				type: 'DELETE',
+			})
+			.done(function(result) {
+				location.reload();
+			})
+		}
+	})	
 });
 
 

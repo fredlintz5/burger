@@ -47,7 +47,28 @@ app.post('/burgers/create', (req,res) => {
 				res.send(result);
 			}
 		})
+})
 
+
+app.delete('/burgers/delete/:name', (req,res) => {
+	connection.query(`DELETE FROM burgers WHERE name='${req.params.name}'`, (err, result) => {
+		if (err) {
+			console.log(err);
+		} else {
+			res.send(result);
+		}
+	})
+})
+
+
+app.put('/burgers/update/:name/:option/:value', (req,res) => {
+	connection.query(`UPDATE burgers SET ${req.params.option}='${req.params.value}' WHERE name='${req.params.name}'`, (err, result) => {
+		if (err) {
+			console.log(err);
+		} else {
+			res.send(result);
+		}
+	})
 })
 
 
