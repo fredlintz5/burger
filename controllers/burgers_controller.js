@@ -1,24 +1,44 @@
-const models = require('../models/burger.js');
+const orm = require('../model/burger.js');
 const express = require('express');
 const router = express.Router();
 
 
-router.post('somePath', (req,res) => {
+router.get('/', (req,res) => {
+	orm.selectAll((result) => {
+		res.render('index', {thing: result});;
+	});
+})
 
-});
 
-router.get('somePath', (req,res) => {
+router.get('/burgers/:id', (req, res) => {
+	orm.selectSpecific(req.params.id, (result) => {
+		res.send(result);
+	});	
+})
 
-});
 
-router.put('somePath', (req,res) => {
+router.post('/burgers/create', (req,res) => {
+	orm.createNew(req.body, (result) => {
+		res.send(result);
+	});	
+})
 
-});
 
-router.delete('somePath', (req,res) => {
+router.delete('/burgers/delete/:name', (req,res) => {
+	let result = orm.deleteBurger(req.params.name); 
+	
+	res.send(result);
+})
 
-});
 
+router.put('/burgers/update/:name/:option/:value', (req,res) => {
+	orm.updateBurger(req.params.option, req.params.value, req.params.name, (result) => {
+		res.send(result);
+	});	
+})
 
 
 module.exports = router;
+
+
+

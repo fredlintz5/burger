@@ -118,7 +118,14 @@ $('#upBut').on('click', function() {
 	$('#upButConfirm').on('click', function() {
 		let name = $('#updateBurger').val().trim();
 		let optionValue = $('#optionValue').val();
-		let newValue    = $('#newValue').val().trim();
+		let newValue = $('#newValue').val().trim();
+
+		if (newValue === 'true') {
+			newValue = 1;
+		} else if (newValue === 'false') {
+			newValue = 0;
+		}
+
 		if (name !== "" && newValue !== "") {
 			$.ajax({
 				url: `/burgers/update/${name}/${optionValue}/${newValue}/`,
